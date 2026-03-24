@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- React CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel CDN -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        const Child = ({ state }) => {
+            return <button type="button">{state}</button>
+        }
+        const App = () => {
+            const [number1, setNumber1] = useState(0);
+            const [number2, setNumber2] = useState(0);
+            const handleChange = () => {
+                setNumber1((prev) => prev + 2);
+                setNumber2((prev) => prev + 3);
+            }
+            return (
+                <div>
+                    <Child state={number1} />
+                    <Child state={number2} />
+                    <button onClick={handleChange}>Change</button>
+                </div>
+            )
+        }
+        const dom = document.querySelector("#root");
+        const el = <App />
+        ReactDOM.render(el, dom);
+    </script>
+
+</body>
+
+</html>

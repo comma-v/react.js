@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>React CDN Hello</title>
+    <!-- React CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel CDN -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+   
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+        const dom = document.querySelector("#root");
+        const el = <h1>안녕하세요?</h1>
+        ReactDOM.render(el, dom);
+    </script>
+
+</body>
+
+</html>
